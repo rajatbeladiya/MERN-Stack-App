@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://rajat123:rajat123@devcluster-w0d0l.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://rajat123:rajat123@devcluster-w0d0l.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtToken": "jwtsecrettoken"
 }
