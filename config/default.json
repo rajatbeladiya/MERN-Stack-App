@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://rajat123:rajat123@devcluster-w0d0l.mongodb.net/test?retryWrites=true&w=majority",
-  "jwtToken": "jwtsecrettoken"
+  "jwtToken": "jwtsecrettoken",
+  "githubClientId": "db35a738ee04005b0882",
+  "githubSecret": "49d4f1c0498d350afa0833a549dfcd910a5891e2"
 }
