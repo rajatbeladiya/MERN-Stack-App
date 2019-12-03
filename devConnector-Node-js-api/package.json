@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index",
     "server": "nodemon index",
-    "client": "npm start --prefix ../client",
+    "client": "npm start --prefix ../client-React-App",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Rajat Beladiya",
