@@ -13,7 +13,6 @@ export default function(state = initialState, action) {
   switch (type) {
     case GET_PROFILE:
     case UPDATE_PROFILE:
-      console.log('payload=====', payload);
       return {
         ...state,
         profile: payload,

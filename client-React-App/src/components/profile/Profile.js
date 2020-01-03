@@ -28,8 +28,6 @@ const Profile = ({
           <Link to="/profiles" className="btn btn-light">
             Back to Profiles
           </Link>
-          {console.log('auth.user._id======', auth && auth.user && auth.user._id)}
-          {console.log('profile.user._id======',profile && profile.user && profile.user._id)}
           {auth && auth.isAuthenticated && auth.loading === false && auth.user && profile && profile.user && auth.user._id === profile.user._id && (
             <Link to="/edit-profile" className="btn btn-dark">
               Edit Profile
