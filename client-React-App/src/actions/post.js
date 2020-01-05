@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { setAlert } from './alert';
-import { GET_POSTS, POST_ERROR, UPDATE_LIKES, DELETE_POST } from './types';
+import { GET_POSTS, POST_ERROR, UPDATE_LIKES, DELETE_POST, ADD_POST } from './types';
 
 // get posts
 
@@ -22,7 +22,6 @@ export const getPosts = () => async dispatch => {
 
 // Add Like
 export const addLike = postId => async dispatch => {
-  console.log('like======');
   try {
     const res = await axios.put(`/api/posts/like/${postId}`);
 
@@ -66,6 +65,31 @@ export const deletePost = postId => async dispatch => {
     });
 
     dispatch(setAlert('Post removed', 'success'));
+  } catch (err) {
+    dispatch({
+      type: POST_ERROR,
+      payload: { msg: err && err.response && err.response.statusText, status: err && err.response && err.response.status }
+    });
+  }
+}
+
+// Add Post
+export const addPost = formData => async dispatch => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+
+  try {
+    const res = await axios.post('/api/posts', formData, config);
+
+    dispatch({
+      type: ADD_POST,
+      payload: res.data,
+    });
+
+    dispatch(setAlert('Post created', 'success'));
   } catch (err) {
     dispatch({
       type: POST_ERROR,
